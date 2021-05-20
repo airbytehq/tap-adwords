@@ -308,6 +308,7 @@ def with_retries_on_exception(sleepy_time, max_attempts, dont_retry=[]):
 
             while ex and attempts < max_attempts:
                 LOGGER.warning("attempt {} of {} failed".format(attempts, some_function))
+                LOGGER.warning("Exception: {}".format(repr(ex)))
                 LOGGER.warning("waiting {} seconds before retrying".format(sleepy_time))
                 time.sleep(RETRY_SLEEP_TIME)
                 try:
