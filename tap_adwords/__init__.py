@@ -290,8 +290,8 @@ def transform_pre_hook(data, typ, schema): # pylint: disable=unused-argument
 
     return data
 
-RETRY_SLEEP_TIME = 60
-MAX_ATTEMPTS = 3
+RETRY_SLEEP_TIME = 180
+MAX_ATTEMPTS = 5
 def with_retries_on_exception(sleepy_time, max_attempts, dont_retry=[]):
     def wrap(some_function):
         def wrapped_function(*args):
